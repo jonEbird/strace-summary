@@ -1,0 +1,6 @@
+*.pyc
+*egg-info
+README.html
+/dist/
+/build/
+scripts/dummy.py
