@@ -1,0 +1,103 @@
+Process 4212 attached
+12:52:01.283177 epoll_wait(3, {{EPOLLIN, {u32=1133515488, u64=140532463440608}}}, 1, 30000) = 1
+12:52:03.775661 stat("/var/lib/sss/pipes/private/pam", {st_dev=makedev(8, 1), st_ino=270780, st_mode=S_IFSOCK|0600, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=0, st_size=0, st_atime=2015/01/23-12:52:03, st_mtime=2015/01/23-18:37:39, st_ctime=2015/01/23-18:37:39}) = 0
+12:52:03.775844 accept(17, {sa_family=AF_LOCAL, NULL}, [2]) = 18
+12:52:03.775972 getsockopt(18, SOL_SOCKET, SO_PEERCRED, {pid=10723, uid=0, gid=0}, [12]) = 0
+12:52:03.776101 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLIN|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:03.776239 epoll_wait(3, {{EPOLLIN, {u32=1133502736, u64=140532463427856}}}, 1, 60000) = 1
+12:52:03.776364 recvfrom(18, "\24\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0", 8704, 0, NULL, NULL) = 20
+12:52:03.776479 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:03.776553 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLOUT|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:03.776697 epoll_wait(3, {{EPOLLOUT, {u32=1133502736, u64=140532463427856}}}, 1, 60000) = 1
+12:52:03.776816 sendto(18, "\24\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0", 20, 0, NULL, 0) = 20
+12:52:03.776930 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:03.777041 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLIN|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:03.777109 epoll_wait(3, {{EPOLLIN, {u32=1133502736, u64=140532463427856}}}, 1, 60000) = 1
+12:52:03.777270 recvfrom(18, "s\0\0\0\363\0\0\0\0\0\0\0\0\0\0\0IPAM\1\0\0\0\t\0\0\0jsmi"..., 8704, 0, NULL, NULL) = 115
+12:52:03.777375 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:03.777633 sendmsg(13, {msg_name(0)=NULL, msg_iov(2)=[{"l\1\0\1*\0\0\0007\0\0\0\202\0\0\0\1\1o\0\"\0\0\0/org/fre"..., 152}, {"\3\0\0\0\1\0\0\0\r\0\0\0name=jsmiller\0\0\0\t\0\0\0"..., 42}], msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 194
+12:52:03.779924 epoll_wait(3, {{EPOLLIN, {u32=1133491248, u64=140532463416368}}}, 1, 58000) = 1
+12:52:29.357722 recvmsg(13, {msg_name(0)=NULL, msg_iov(1)=[{"l\2\1\1\24\0\0\0007\0\0\0\21\0\0\0\5\1u\0007\0\0\0\10\1g\0\3qus"..., 2048}], msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 60
+12:52:29.357843 recvmsg(13, 0x7fffba33f510, MSG_CMSG_CLOEXEC) = -1 EAGAIN (Resource temporarily unavailable)
+12:52:29.358068 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=20024, len=1}) = 0
+12:52:29.358145 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=20024, len=1}) = 0
+12:52:29.358257 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=15804, len=1}) = 0
+12:52:29.358320 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=15804, len=1}) = 0
+12:52:29.358455 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=39188, len=1}) = 0
+12:52:29.358577 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=39188, len=1}) = 0
+12:52:29.358758 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=10936, len=1}) = 0
+12:52:29.358880 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=10936, len=1}) = 0
+12:52:29.359021 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6740, len=1}) = 0
+12:52:29.359145 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6740, len=1}) = 0
+12:52:29.359269 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.359334 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.359488 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.359666 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.359809 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=16460, len=1}) = 0
+12:52:29.359938 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=16460, len=1}) = 0
+12:52:29.360056 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=31352, len=1}) = 0
+12:52:29.360194 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=31352, len=1}) = 0
+12:52:29.360471 sendmsg(13, {msg_name(0)=NULL, msg_iov(2)=[{"l\1\0\1|\0\0\0008\0\0\0\215\0\0\0\1\1o\0\"\0\0\0/org/fre"..., 160}, {"\363\0\0\0\10\0\0\0jsmiller\0\0\0\0\t\0\0\0posix-qe"..., 124}], msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 284
+12:52:29.361013 epoll_wait(3, {{EPOLLIN, {u32=1133491248, u64=140532463416368}}}, 1, 5000) = 1
+12:52:29.361128 recvmsg(13, {msg_name(0)=NULL, msg_iov(1)=[{"l\2\1\1\10\0\0\0008\0\0\0\25\0\0\0\5\1u\0008\0\0\0\10\1g\0\7ua("..., 2048}], msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 48
+12:52:29.361257 recvmsg(13, 0x7fffba33f510, MSG_CMSG_CLOEXEC) = -1 EAGAIN (Resource temporarily unavailable)
+12:52:29.361422 fcntl(9, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=31892, len=1}) = 0
+12:52:29.361538 fcntl(9, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=31892, len=1}) = 0
+12:52:29.361701 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLOUT|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:29.361834 epoll_wait(3, {{EPOLLOUT, {u32=1133502736, u64=140532463427856}}}, 1, 4999) = 1
+12:52:29.361959 sendto(18, "*\0\0\0\363\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\0\0\0\2\0\0\0\n\0\0\0"..., 42, 0, NULL, 0) = 42
+12:52:29.362375 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:29.362442 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLIN|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:29.362552 epoll_wait(3, {{EPOLLIN, {u32=1133502736, u64=140532463427856}}}, 1, 4998) = 1
+12:52:29.579973 recvfrom(18, "s\0\0\0\364\0\0\0\0\0\0\0\0\0\0\0IPAM\1\0\0\0\t\0\0\0jsmi"..., 8704, 0, NULL, NULL) = 115
+12:52:29.580068 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:29.580274 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6740, len=1}) = 0
+12:52:29.580419 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6740, len=1}) = 0
+12:52:29.580552 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.580697 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.580822 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.580938 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:29.581064 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=16460, len=1}) = 0
+12:52:29.581132 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=16460, len=1}) = 0
+12:52:29.581267 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=31352, len=1}) = 0
+12:52:29.581390 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=31352, len=1}) = 0
+12:52:29.581704 sendmsg(13, {msg_name(0)=NULL, msg_iov(2)=[{"l\1\0\1|\0\0\0009\0\0\0\215\0\0\0\1\1o\0\"\0\0\0/org/fre"..., 160}, {"\364\0\0\0\10\0\0\0jsmiller\0\0\0\0\t\0\0\0posix-qe"..., 124}], msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 284
+12:52:29.582180 epoll_wait(3, {{EPOLLIN, {u32=1133491248, u64=140532463416368}}}, 1, 4779) = 1
+12:52:29.582292 recvmsg(13, {msg_name(0)=NULL, msg_iov(1)=[{"l\2\1\1\10\0\0\0009\0\0\0\25\0\0\0\5\1u\0009\0\0\0\10\1g\0\7ua("..., 2048}], msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 48
+12:52:29.582417 recvmsg(13, 0x7fffba33f510, MSG_CMSG_CLOEXEC) = -1 EAGAIN (Resource temporarily unavailable)
+12:52:29.582575 fcntl(9, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=31892, len=1}) = 0
+12:52:29.582759 fcntl(9, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=31892, len=1}) = 0
+12:52:29.582933 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLOUT|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:29.583079 epoll_wait(3, {{EPOLLOUT, {u32=1133502736, u64=140532463427856}}}, 1, 4778) = 1
+12:52:29.583199 sendto(18, "*\0\0\0\364\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\0\0\0\2\0\0\0\n\0\0\0"..., 42, 0, NULL, 0) = 42
+12:52:29.583316 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:29.583429 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLIN|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:29.583546 epoll_wait(3, {{EPOLLIN, {u32=1133502736, u64=140532463427856}}}, 1, 4777) = 1
+12:52:30.858075 recvfrom(18, "s\0\0\0\365\0\0\0\0\0\0\0\0\0\0\0IPAM\1\0\0\0\t\0\0\0jsmi"..., 8704, 0, NULL, NULL) = 115
+12:52:30.858192 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:30.858429 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6740, len=1}) = 0
+12:52:30.858622 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6740, len=1}) = 0
+12:52:30.858706 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:30.858769 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:30.858909 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:30.858973 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=6272, len=1}) = 0
+12:52:30.859090 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=16460, len=1}) = 0
+12:52:30.859201 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=16460, len=1}) = 0
+12:52:30.859331 fcntl(15, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=31352, len=1}) = 0
+12:52:30.859468 fcntl(15, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=31352, len=1}) = 0
+12:52:30.859786 sendmsg(13, {msg_name(0)=NULL, msg_iov(2)=[{"l\1\0\1|\0\0\0:\0\0\0\215\0\0\0\1\1o\0\"\0\0\0/org/fre"..., 160}, {"\365\0\0\0\10\0\0\0jsmiller\0\0\0\0\t\0\0\0posix-qe"..., 124}], msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 284
+12:52:30.860303 epoll_wait(3, {{EPOLLIN, {u32=1133491248, u64=140532463416368}}}, 1, 3501) = 1
+12:52:30.860415 recvmsg(13, {msg_name(0)=NULL, msg_iov(1)=[{"l\2\1\1\10\0\0\0:\0\0\0\25\0\0\0\5\1u\0:\0\0\0\10\1g\0\7ua("..., 2048}], msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 48
+12:52:30.861310 recvmsg(13, 0x7fffba33f510, MSG_CMSG_CLOEXEC) = -1 EAGAIN (Resource temporarily unavailable)
+12:52:30.862272 fcntl(9, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=31892, len=1}) = 0
+12:52:30.862487 fcntl(9, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=31892, len=1}) = 0
+12:52:30.862618 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLOUT|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:30.862772 epoll_wait(3, {{EPOLLOUT, {u32=1133502736, u64=140532463427856}}}, 1, 3498) = 1
+12:52:30.862885 sendto(18, "*\0\0\0\365\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\0\0\0\2\0\0\0\n\0\0\0"..., 42, 0, NULL, 0) = 42
+12:52:30.863014 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f650) = 0
+12:52:30.863073 epoll_ctl(3, EPOLL_CTL_ADD, 18, {EPOLLIN|EPOLLERR|EPOLLHUP, {u32=1133502736, u64=140532463427856}}) = 0
+12:52:30.863191 epoll_wait(3, {{EPOLLIN|EPOLLHUP, {u32=1133502736, u64=140532463427856}}}, 1, 3498) = 1
+12:52:30.910987 recvfrom(18, "", 8704, 0, NULL, NULL) = 0
+12:52:30.911107 close(18)               = 0
+12:52:30.911222 epoll_ctl(3, EPOLL_CTL_DEL, 18, 7fffba33f5e0) = -1 EBADF (Bad file descriptor)
+12:52:30.911332 epoll_wait(3, 
