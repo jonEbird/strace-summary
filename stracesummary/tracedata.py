@@ -1,10 +1,8 @@
 #!/bin/env python
 
-import os
-import sys
 import re
 import logging as log
-from datetime import datetime, timedelta
+from datetime import datetime
 
 # regex to find datetime text & associated strptime pattern for parsing
 known_datetime_patterns = (
@@ -45,7 +43,7 @@ class TraceData(object):
                 self.strptime = strp
                 break
 
-    def getlines(self):
+    def __iter__(self):
         """Yield lines to caller"""
         for line in self.__infh:
             yield line.rstrip()
@@ -53,7 +51,7 @@ class TraceData(object):
     def parse_datetime(self, data, flags=0):
         """Use initilized datetime regex and strptime patterns to return
         first valid datetime object hit within data"""
-        if self.datetime_re == None:
+        if self.datetime_re is None:
             return self.epoch
 
         hits = self.datetime_re.findall(data, flags)
@@ -64,3 +62,8 @@ class TraceData(object):
                 return datetime.strptime(hits[0], self.strptime)
         else:
             return self.epoch
+
+    def datetime_parsed(self):
+        """Yield parsed datetime objects with each line"""
+        for line in self.__infh:
+            yield self.parse_datetime(line), line.rstrip()
