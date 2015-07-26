@@ -1,6 +1,11 @@
 *.pyc
 *egg-info
-README.html
+/RELEASE-VERSION
 /dist/
 /build/
+/*.egg
+/.eggs/
+/.coverage
+/coverage.xml
+/nosetests.xml
 scripts/dummy.py

@@ -1,0 +1,3 @@
+# Add the module names here that your application depends upon
+# Modules used just to implement testing can be put directly into your
+#   setup.py file at the tests_require value
