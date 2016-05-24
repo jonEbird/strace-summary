@@ -14,6 +14,9 @@ known_datetime_patterns = (
 
     # Local time format
     ('[A-Z][a-z]{2} [A-Z][a-z]{2} \d+ \d+:\d+:\d+ \d{4}', '%c'),
+
+    # Only HH:MM:SS
+    ('\d+:\d+:\d+', '%H:%M:%S'),
 )
 
 
