@@ -22,7 +22,7 @@ if __name__ == "__main__":
     ss = Timing(tracefile)
     longest = 0
     for lineno, elapsed, line in ss.find_gaps(options.threshold):
-        print "ln.%-7.d%6.2fs: %s" % (lineno, elapsed, line)
+        print("ln.%-7.d%6.2fs: %s" % (lineno, elapsed, line))
         if elapsed > longest:
             longest = elapsed
-    print "Longest gap was %.2fs" % longest
+    print("Longest gap was %.2fs" % longest)

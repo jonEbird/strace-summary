@@ -23,7 +23,7 @@ try:
     # e.g. ['django==1.5.1', 'mezzanine==1.4.6']
     reqs = [str(ir.req) for ir in install_reqs]
 except Exception as e:
-    print "Failed to parse requirements: " + str(e)
+    print("Failed to parse requirements: " + str(e))
     # I suggest you install pip on your system so you don't have to
     # manually update this list along with your requirements.txt file
     reqs = []
