@@ -24,24 +24,27 @@ Pass `-t / --threshold` to control how sensitive you want to be reported::
 Development Setup
 -----------------
 
-For development, the dependent modules are kept in the `requirements.txt`
+For development, the dependent modules are kept in the `requirements-tests.txt`
 file and will be installed within your virtualenv when you run::
 
-     python setup.py develop
+     pip install -e .
 
 Keep the `requirements.txt` up to date with required modules.
 
 Development Testing
 -------------------
 
-We are using nose_ for testing. To initiate the full tests, after you've
+We are using pytest_ for testing. To initiate the full tests, after you've
 naturally setup your virtualenv and installed the required packages, you'd
 run::
 
-    python setup.py nosetests
+    python setup.py pytest
 
-You should hopefully see all "ok" messages. If not, you can visit the
-individual test file to see how and what it was trying to do within the
-`tests` directory.
+Or just::
 
-.. _nose: https://nose.readthedocs.org/en/latest/
+    pytest
+
+They hopefully all pass. If not, you can visit the individual test file to see
+how and what it was trying to do within the `tests` directory.
+
+.. _pytest: https://docs.pytest.org/en/latest/
