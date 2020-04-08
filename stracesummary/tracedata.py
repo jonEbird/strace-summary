@@ -7,16 +7,13 @@ from datetime import datetime
 # regex to find datetime text & associated strptime pattern for parsing
 known_datetime_patterns = (
     # standard for "strace -tt"
-    ('\d+:\d+:\d+\.\d+', '%H:%M:%S.%f'),
-
+    (r"\d+:\d+:\d+\.\d+", "%H:%M:%S.%f"),
     # ftrace uptime epoch style
-    ('\d+\.\d{5}', 'epoch'),
-
+    (r"\d+\.\d{5}", "epoch"),
     # Local time format
-    ('[A-Z][a-z]{2} [A-Z][a-z]{2} \d+ \d+:\d+:\d+ \d{4}', '%c'),
-
+    (r"[A-Z][a-z]{2} [A-Z][a-z]{2} \d+ \d+:\d+:\d+ \d{4}", "%c"),
     # Only HH:MM:SS
-    ('\d+:\d+:\d+', '%H:%M:%S'),
+    (r"\d+:\d+:\d+", "%H:%M:%S"),
 )
 
 
@@ -59,7 +56,7 @@ class TraceData(object):
 
         hits = self.datetime_re.findall(data, flags)
         if hits:
-            if self.strptime == 'epoch':
+            if self.strptime == "epoch":
                 return datetime.fromtimestamp(float(hits[0]))
             else:
                 return datetime.strptime(hits[0], self.strptime)

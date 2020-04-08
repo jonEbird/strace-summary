@@ -9,7 +9,7 @@ class Timing(object):
     def __init__(self, filename):
         self._td = TraceData(filename)
 
-    def find_gaps(self, threshold=.5):
+    def find_gaps(self, threshold=0.5):
         """Identify time deltas between syscalls lines taking over threshold
 
         Args:
@@ -18,7 +18,7 @@ class Timing(object):
         Returns:
             generator: lineno, elapsed time (s), trace line
         """
-        last_line = '-- beginning --'
+        last_line = "-- beginning --"
         prev = None
 
         for n, dt_data in enumerate(self._td.datetime_parsed(), 1):

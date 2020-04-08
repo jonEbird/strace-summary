@@ -1,0 +1,15 @@
+[tool.black]
+line-length = 100
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+(
+    \.eggs         # exclude a few common directories in the
+  | \.egg-info
+  | \.git          # root of the project
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | __pycache__
+)
+'''

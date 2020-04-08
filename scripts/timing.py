@@ -8,9 +8,15 @@ if __name__ == "__main__":
     # TODO: Move this into a separate function and add an entry_point to setup.py
 
     from optparse import OptionParser
-    parser = OptionParser(usage="%prog [options] tracefile", version='0.1b')
-    parser.add_option('-t', '--threshold', type="float", default=1.0,
-                      help="Threshold to use when reporting trace data line deltas")
+
+    parser = OptionParser(usage="%prog [options] tracefile", version="0.1b")
+    parser.add_option(
+        "-t",
+        "--threshold",
+        type="float",
+        default=1.0,
+        help="Threshold to use when reporting trace data line deltas",
+    )
 
     (options, args) = parser.parse_args()
     if not args:
